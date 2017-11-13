@@ -24,7 +24,7 @@ protocol CnAreaPickerViewDelegate: class {
 
 protocol CnAreaPickerDelegate: CnAreaPickerViewDelegate, CnAreaToolbarDelegate {}
 
-class CnAreaPickerView: UIView {
+public class CnAreaPickerView: UIView {
     
     var cities = [[String: AnyObject]]()
     var areas = [String]()

@@ -1,6 +1,6 @@
 import Foundation
 
-class CnLocation {
+public class CnLocation {
     
     var country = ""
     var province = ""
