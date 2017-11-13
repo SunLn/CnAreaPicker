@@ -78,7 +78,7 @@ public class CnAreaPickerView: UIView {
         super.init(frame: CGRect.zero)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -194,11 +194,11 @@ public class CnAreaPickerView: UIView {
 
 extension CnAreaPickerView: UIPickerViewDelegate, UIPickerViewDataSource {
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return areaLevel
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         let pickerType = PickerType(rawValue: component)!
         switch pickerType {
         case .province:
@@ -210,7 +210,7 @@ extension CnAreaPickerView: UIPickerViewDelegate, UIPickerViewDataSource {
         }
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let pickerType = PickerType(rawValue: component)!
         switch pickerType {
         case .province:
@@ -226,7 +226,7 @@ extension CnAreaPickerView: UIPickerViewDelegate, UIPickerViewDataSource {
         }
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         //        print("选中了某一行")
         let pickerType = PickerType(rawValue: component)!
         switch pickerType {

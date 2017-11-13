@@ -20,14 +20,14 @@ class CnAreaToolbar: UIToolbar {
         let sureItem = UIBarButtonItem(title: "确定", style: .plain, target: toolBar, action: #selector(areaPickerSure(_:)))
         toolBar.items = [cancelItem, flexibleItem, sureItem]
         cancelItem.setTitleTextAttributes([
-            NSAttributedStringKey.font: UIFont.systemFont(ofSize: 15),
-            NSAttributedStringKey.foregroundColor: tintColor,
-            NSAttributedStringKey.backgroundColor: barTintColor
+            NSFontAttributeName: UIFont.systemFont(ofSize: 15),
+            NSForegroundColorAttributeName: tintColor,
+            NSBackgroundColorAttributeName: barTintColor
             ], for: .normal)
         sureItem.setTitleTextAttributes([
-            NSAttributedStringKey.font: UIFont.systemFont(ofSize: 15),
-            NSAttributedStringKey.foregroundColor: tintColor,
-            NSAttributedStringKey.backgroundColor: barTintColor
+            NSFontAttributeName: UIFont.systemFont(ofSize: 15),
+            NSForegroundColorAttributeName: tintColor,
+            NSBackgroundColorAttributeName: barTintColor
             ], for: .normal)
         
         toolBar.barTintColor = barTintColor
