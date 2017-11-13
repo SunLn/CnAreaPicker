@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         setAreaText(locate: myLocate)
         
         //areaPickerView.有控制器在的时候,不会被销毁.跟控制器时间销毁...没关系吧?
-        areaPickerView = CnAreaPickerView.picker(for: self, textField: areaTextField)
+        areaPickerView = CnAreaPickerView.picker(for: self, textField: areaTextField, barTintColor: UIColor.white, tintColor: UIColor.black, areaLevel: 2)
         areaTextField.delegate = self  //也个也最好实现.因为可以在将要显示PickerView的时候,主动选中一个地区.
         
         //为了点击空白的时候能够退键盘
