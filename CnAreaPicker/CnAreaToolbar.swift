@@ -1,12 +1,12 @@
 import UIKit
 
-protocol CnAreaToolbarDelegate: class {
+public protocol CnAreaToolbarDelegate: class {
     func sure(areaToolbar: CnAreaToolbar, textField: UITextField, locate: CnLocation, item: UIBarButtonItem)
     func cancel(areaToolbar: CnAreaToolbar, textField: UITextField, locate: CnLocation, item: UIBarButtonItem)
 }
 
 
-class CnAreaToolbar: UIToolbar {
+public class CnAreaToolbar: UIToolbar {
     
     weak var barDelegate: CnAreaToolbarDelegate?
     var textField: UITextField!
@@ -39,7 +39,7 @@ class CnAreaToolbar: UIToolbar {
         super.init(frame: CGRect(x: 0, y: 0, width: APMAIN_WIDTH, height: 44))
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

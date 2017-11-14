@@ -18,11 +18,11 @@ enum PickerType: Int {
     case area
 }
 
-protocol CnAreaPickerViewDelegate: class {
+public protocol CnAreaPickerViewDelegate: class {
     func statusChanged(areaPickerView: CnAreaPickerView, pickerView: UIPickerView, textField: UITextField, locate: CnLocation)
 }
 
-protocol CnAreaPickerDelegate: CnAreaPickerViewDelegate, CnAreaToolbarDelegate {}
+public protocol CnAreaPickerDelegate: CnAreaPickerViewDelegate, CnAreaToolbarDelegate {}
 
 public class CnAreaPickerView: UIView {
     
@@ -34,7 +34,7 @@ public class CnAreaPickerView: UIView {
     var areaLevel: Int = 3
     weak var delegate: CnAreaPickerViewDelegate?
     
-    static func picker<controller: UIViewController>(for controller: controller, textField: UITextField, barTintColor: UIColor = APDefaultBarTintColor, tintColor: UIColor = APDefaultTintColor, areaLevel: Int = 3) -> CnAreaPickerView where controller: CnAreaPickerDelegate {
+    public static func picker<controller: UIViewController>(for controller: controller, textField: UITextField, barTintColor: UIColor = APDefaultBarTintColor, tintColor: UIColor = APDefaultTintColor, areaLevel: Int = 3) -> CnAreaPickerView where controller: CnAreaPickerDelegate {
         
         let areaPickerView = CnAreaPickerView()
         areaPickerView.delegate = controller
@@ -82,7 +82,7 @@ public class CnAreaPickerView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func shouldSelected(proName: String, cityName: String, areaName: String?) {
+    public func shouldSelected(proName: String, cityName: String, areaName: String?) {
         
         if self.areaLevel >= 1 {
             for index in 0..<provinces.count {
@@ -180,10 +180,38 @@ public class CnAreaPickerView: UIView {
         }
     }
     
+    func getDocumentsURL() -> URL {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    }
+    
+    //获得document目录下文件的URL
+    func getFileInDocumentsURL(_ filename: String) -> URL {
+        return self.getDocumentsURL().appendingPathComponent(filename)
+    }
+    
+    //获得document目录下文件的path相对路径
+    func getFileRelativePath(_ filename: String) -> String {
+        return self.getFileInDocumentsURL(filename).relativePath
+    }
+    
+    func isFileExists(_ filePath: String) -> Bool {
+        return FileManager.default.fileExists(atPath: filePath)
+    }
+    
     // MARK: - lazy
     lazy var provinces: [[String: AnyObject]] = {
-        let path = Bundle.main.path(forResource: "area", ofType: "plist")
-        return NSArray(contentsOfFile: path!) as! [[String: AnyObject]]
+        let dir = try? FileManager.default.url(for: .documentDirectory,
+                                               in: .userDomainMask, appropriateFor: nil, create: true)
+        
+        let a1 = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("area.plist").relativePath
+        
+//        let a = getFileInDocumentsURL("area.plist")
+        print(a1)
+        print(FileManager.default.fileExists(atPath: a1))
+        print(dir, "====")
+        let s = NSArray(contentsOfFile: Bundle.main.path(forResource: "area", ofType: "plist")!)  as! [[String: AnyObject]]
+//        let path = Bundle.main.path(forResource: "area", ofType: "plist")
+        return s
     }()
     
     lazy var locate: CnLocation = {

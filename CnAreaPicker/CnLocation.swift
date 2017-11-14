@@ -2,20 +2,21 @@ import Foundation
 
 public class CnLocation {
     
-    var country = ""
-    var province = ""
-    var city = ""
-    var area = ""
-    var street = ""
+    public var country = ""
+    public var province = ""
+    public var city = ""
+    public var area = ""
+    public var street = ""
 //    var latitude: Double? //没数据
 //    var longitude: Double? //没数据
     
-    var provinceCode = ""
-    var cityCode = ""
-    var areaCode = ""
+    public var provinceCode = ""
+    public var cityCode = ""
+    public var areaCode = ""
     
-    func decription() {
+    public func decription() {
         print("\(province): \(provinceCode) \(city): \(cityCode) \(area): \(areaCode)")
     }
     
+    public init() {}
 }
