@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "CnAreaPicker"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "Swift 省市区联动选择"
 
   # This description is used to generate tags and improve search results.
@@ -95,6 +95,7 @@ Pod::Spec.new do |s|
   s.source_files  = "CnAreaPicker/*.swift"
   s.exclude_files = "Classes/Exclude"
 
+
   # s.public_header_files = "Classes/**/*.h"
 
 
@@ -108,10 +109,13 @@ Pod::Spec.new do |s|
 
   # s.resource  = "icon.png"
     s.resources =  [
-        'CnAreaPicker/*.plist',
-        'CnAreaPicker/addressCode'
+        'CnAreaPicker/Assets/*'
     ]
-
+  # s.resource_bundles = {
+  #   'CnAreaPicker' => [
+  #       'CnAreaPicker/Assets/*'
+  #   ]
+  # }
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
 

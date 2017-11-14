@@ -49,14 +49,14 @@ extension ViewController: UITextFieldDelegate {
 }
 
 extension ViewController: CnAreaPickerDelegate {
-    internal func cancel(areaToolbar: CnAreaToolbar, textField: UITextField, locate: CnLocation, item: UIBarButtonItem) {
+    func cancel(areaToolbar: CnAreaToolbar, textField: UITextField, locate: CnLocation, item: UIBarButtonItem) {
         print("点击了取消")
         //还原原来的值......
         myLocate.decription()
         setAreaText(locate: myLocate)
     }
     
-    internal func sure(areaToolbar: CnAreaToolbar, textField: UITextField, locate: CnLocation, item: UIBarButtonItem) {
+    func sure(areaToolbar: CnAreaToolbar, textField: UITextField, locate: CnLocation, item: UIBarButtonItem) {
         print("点击了确定")
         //当picker定住的时候,就有会值.**********但是******************
         //picker还有转动的时候有些值是空的........取值前一定要判断是否为空.否则crash.....
@@ -73,7 +73,7 @@ extension ViewController: CnAreaPickerDelegate {
         
     }
     
-    internal func statusChanged(areaPickerView: CnAreaPickerView, pickerView: UIPickerView, textField: UITextField, locate: CnLocation) {
+    func statusChanged(areaPickerView: CnAreaPickerView, pickerView: UIPickerView, textField: UITextField, locate: CnLocation) {
         //立即显示新值
         print("转到的值:\n")
         locate.decription()

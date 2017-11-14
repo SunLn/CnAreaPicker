@@ -12,11 +12,11 @@
 		5F5075941FB9DE6300078B78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F5075921FB9DE6300078B78 /* Main.storyboard */; };
 		5F5075961FB9DE6300078B78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F5075951FB9DE6300078B78 /* Assets.xcassets */; };
 		5F5075991FB9DE6300078B78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F5075971FB9DE6300078B78 /* LaunchScreen.storyboard */; };
-		5F5075A81FB9DF9400078B78 /* addressCode in Resources */ = {isa = PBXBuildFile; fileRef = 5F5075A31FB9DF9300078B78 /* addressCode */; };
-		5F5075A91FB9DF9400078B78 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F5075A41FB9DF9300078B78 /* area.plist */; };
 		5F5075AA1FB9DF9400078B78 /* CnAreaPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5075A51FB9DF9300078B78 /* CnAreaPickerView.swift */; };
 		5F5075AB1FB9DF9400078B78 /* CnAreaToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5075A61FB9DF9300078B78 /* CnAreaToolbar.swift */; };
 		5F5075AC1FB9DF9400078B78 /* CnLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5075A71FB9DF9300078B78 /* CnLocation.swift */; };
+		5F5075B01FBAB6C400078B78 /* addressCode in Resources */ = {isa = PBXBuildFile; fileRef = 5F5075AE1FBAB6C400078B78 /* addressCode */; };
+		5F5075B11FBAB6C400078B78 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F5075AF1FBAB6C400078B78 /* area.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,11 +27,11 @@
 		5F5075951FB9DE6300078B78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F5075981FB9DE6300078B78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F50759A1FB9DE6300078B78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5F5075A31FB9DF9300078B78 /* addressCode */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = addressCode; sourceTree = "<group>"; };
-		5F5075A41FB9DF9300078B78 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 		5F5075A51FB9DF9300078B78 /* CnAreaPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CnAreaPickerView.swift; sourceTree = "<group>"; };
 		5F5075A61FB9DF9300078B78 /* CnAreaToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CnAreaToolbar.swift; sourceTree = "<group>"; };
 		5F5075A71FB9DF9300078B78 /* CnLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CnLocation.swift; sourceTree = "<group>"; };
+		5F5075AE1FBAB6C400078B78 /* addressCode */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = addressCode; sourceTree = "<group>"; };
+		5F5075AF1FBAB6C400078B78 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +64,7 @@
 		5F50758D1FB9DE6300078B78 /* CnAreaPickerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5F5075AD1FBAB6C400078B78 /* Assets */,
 				5F5075A21FB9DF9300078B78 /* CnAreaPicker */,
 				5F50758E1FB9DE6300078B78 /* AppDelegate.swift */,
 				5F5075901FB9DE6300078B78 /* ViewController.swift */,
@@ -78,14 +79,22 @@
 		5F5075A21FB9DF9300078B78 /* CnAreaPicker */ = {
 			isa = PBXGroup;
 			children = (
-				5F5075A31FB9DF9300078B78 /* addressCode */,
-				5F5075A41FB9DF9300078B78 /* area.plist */,
 				5F5075A51FB9DF9300078B78 /* CnAreaPickerView.swift */,
 				5F5075A61FB9DF9300078B78 /* CnAreaToolbar.swift */,
 				5F5075A71FB9DF9300078B78 /* CnLocation.swift */,
 			);
 			name = CnAreaPicker;
 			path = ../../CnAreaPicker;
+			sourceTree = "<group>";
+		};
+		5F5075AD1FBAB6C400078B78 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5F5075AE1FBAB6C400078B78 /* addressCode */,
+				5F5075AF1FBAB6C400078B78 /* area.plist */,
+			);
+			name = Assets;
+			path = ../../Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,10 +156,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F5075A81FB9DF9400078B78 /* addressCode in Resources */,
-				5F5075A91FB9DF9400078B78 /* area.plist in Resources */,
 				5F5075991FB9DE6300078B78 /* LaunchScreen.storyboard in Resources */,
 				5F5075961FB9DE6300078B78 /* Assets.xcassets in Resources */,
+				5F5075B11FBAB6C400078B78 /* area.plist in Resources */,
+				5F5075B01FBAB6C400078B78 /* addressCode in Resources */,
 				5F5075941FB9DE6300078B78 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
