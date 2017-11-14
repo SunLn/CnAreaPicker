@@ -180,23 +180,7 @@ public class CnAreaPickerView: UIView {
         }
     }
     
-    func getDocumentsURL() -> URL {
-        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-    }
-    
-    //获得document目录下文件的URL
-    func getFileInDocumentsURL(_ filename: String) -> URL {
-        return self.getDocumentsURL().appendingPathComponent(filename)
-    }
-    
-    //获得document目录下文件的path相对路径
-    func getFileRelativePath(_ filename: String) -> String {
-        return self.getFileInDocumentsURL(filename).relativePath
-    }
-    
-    func isFileExists(_ filePath: String) -> Bool {
-        return FileManager.default.fileExists(atPath: filePath)
-    }
+
     
     // MARK: - lazy
     lazy var provinces: [[String: AnyObject]] = {
@@ -209,7 +193,11 @@ public class CnAreaPickerView: UIView {
         print(a1)
         print(FileManager.default.fileExists(atPath: a1))
         print(dir, "====")
-        let s = NSArray(contentsOfFile: Bundle.main.path(forResource: "area", ofType: "plist")!)  as! [[String: AnyObject]]
+        var bundlePath: String? = Bundle(for: CnAreaPickerView.self).path(forResource: "area", ofType: "plist")
+        var bundle = Bundle(path: bundlePath!)
+        
+        print(dir, "====")
+        let s = NSArray(contentsOfFile: bundlePath!)  as! [[String: AnyObject]]
 //        let path = Bundle.main.path(forResource: "area", ofType: "plist")
         return s
     }()

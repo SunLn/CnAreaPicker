@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "CnAreaPicker"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.summary      = "Swift 省市区联动选择"
 
   # This description is used to generate tags and improve search results.
